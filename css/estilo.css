@@ -1,1 +1,179 @@
-/* No CSS *//*# sourceMappingURL=estilo.css.map */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.escritorio {
+  opacity: 0;
+}
+
+.degradado {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  z-index: 800;
+  -webkit-transition: ease-in-out .25s;
+  transition: ease-in-out .25s;
+}
+
+.movil {
+  width: 80%;
+  max-width: 768px;
+  height: 70vh;
+  background: #f5f4f6;
+  position: fixed;
+  top: 0;
+  left: -80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /*position: relative;*/
+  z-index: 1000;
+  -webkit-transition: ease-in-out .15s;
+  transition: ease-in-out .15s;
+}
+
+.movil a {
+  width: 100%;
+  padding: 2rem;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #434142;
+  font-size: 1rem;
+  text-decoration: none;
+  -webkit-transition: ease-in-out .15s;
+  transition: ease-in-out .15s;
+}
+
+.movil a:hover {
+  color: #7b89c6;
+}
+
+.movil .salir {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #f5f4f6;
+  background: #b03784;
+  width: 100%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: ease-in-out .15s;
+  transition: ease-in-out .15s;
+}
+
+.movil .salir:hover {
+  background: #b03784da;
+}
+
+.btnMenu {
+  cursor: pointer;
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #f5f4f6;
+  -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+          box-shadow: 0 0 25px rgba(0, 0, 0, 0.35);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  z-index: 600;
+}
+
+.btnMenu i {
+  font-size: 1.5rem;
+  color: #b03784;
+}
+
+@media screen and (max-width: 768px) {
+  .movil {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .btnMenu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .degradado {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .escritorio {
+    opacity: 1;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    padding: .8rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .escritorio .enlaces a {
+    padding: 0 1.8rem;
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #434142;
+    font-size: 1rem;
+    text-decoration: none;
+    -webkit-transition: ease-in-out .15s;
+    transition: ease-in-out .15s;
+  }
+  .escritorio .enlaces a:hover {
+    color: #7b89c6;
+  }
+}
+/*# sourceMappingURL=estilo.css.map */
