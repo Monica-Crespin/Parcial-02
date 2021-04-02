@@ -1,1 +1,58 @@
 @import 'variables';
+
+.aboutus{
+    height: 100vh;
+    background-image: url('../img/About us-01.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .info{
+        padding: 2rem;
+        h2{
+            font-family: $texto;
+            font-size: 42px;
+            font-weight: 900;
+            color: $rosado;
+            text-transform: uppercase;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+        p{
+            font-family: $texto;
+            font-size: 18px;
+            font-weight: 400;
+            color: $negro;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and(min-width: 768px){
+    .aboutus{
+        .info{
+            padding: 4rem;
+            h1{
+                font-size: 49px;
+            }
+            p{
+                font-size: 25px;
+                line-height: 37px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .aboutus{
+        .info{
+            padding: 12rem;
+            h1{
+                font-size: 92px;
+            }
+        }
+    }
+}

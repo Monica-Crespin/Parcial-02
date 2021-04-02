@@ -1,1 +1,67 @@
 @import 'variables';
+
+.footer{
+    background-color: $azul;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+    .contacto{
+        .caja1{
+            h5{
+                padding-top: 1rem;
+                font-family: $texto;
+                font-weight: 700;
+                font-size: 15px;
+                text-transform: uppercase;
+                color: $blanco;
+                text-align: left;
+            }
+            p{
+                padding-top: 1rem;
+                font-family: $texto;
+                font-weight: 400;
+                font-size: 14px;
+                color: $blanco;
+                line-height: 25px;
+                text-align: left;
+            }
+        }
+        .caja2{
+            h5{
+                padding-top: 1rem;
+                font-family: $texto;
+                font-weight: 700;
+                font-size: 15px;
+                text-transform: uppercase;
+                color: $blanco;
+                text-align: left;
+            }
+            .icono{
+                padding-top: 1rem;
+                padding-right: .8rem;
+                display: flex;
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px){
+    .footer{
+        .contacto{
+            display: grid;
+            grid-gap: 8rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .footer{
+        .contacto{
+            grid-gap: 25rem;
+        }
+    }
+}

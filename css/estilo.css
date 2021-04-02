@@ -6,7 +6,11 @@
 }
 
 .escritorio {
-  opacity: 0;
+  display: none;
+}
+
+.btnArrowUp {
+  display: none;
 }
 
 .degradado {
@@ -25,7 +29,7 @@
 .movil {
   width: 80%;
   max-width: 768px;
-  height: 70vh;
+  height: 100vh;
   background: #f5f4f6;
   position: fixed;
   top: 0;
@@ -121,9 +125,8 @@
   color: #b03784;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 375px) {
   .movil {
-    height: 100vh;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -140,12 +143,18 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 1024px) {
+  .movil {
+    display: none;
+  }
+  .btnMenu {
+    display: none;
+  }
+  .degradado {
+    display: none;
+  }
   .escritorio {
-    opacity: 1;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
+    width: 100%;
     padding: .8rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -160,6 +169,7 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    background-color: #f5f4f6;
   }
   .escritorio .enlaces a {
     padding: 0 1.8rem;
@@ -174,6 +184,368 @@
   }
   .escritorio .enlaces a:hover {
     color: #7b89c6;
+  }
+}
+
+header {
+  height: 100vh;
+  background-image: url("../img/Header-01.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+
+header .encabezado {
+  padding-left: 3rem;
+}
+
+header .encabezado h1 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 42px;
+  color: #f5f4f6;
+  text-transform: uppercase;
+}
+
+header .encabezado button {
+  cursor: pointer;
+  margin-top: 1rem;
+  background-color: #434142;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  color: #f5f4f6;
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: none;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+header .encabezado button:hover {
+  -webkit-transition: ease-in-out .15s;
+  transition: ease-in-out .15s;
+  background-color: #adc8e6;
+  color: #434142;
+}
+
+@media screen and (min-width: 768px) {
+  header .encabezado h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header .encabezado h1 {
+    font-size: 6rem;
+  }
+}
+
+.aboutus {
+  height: 100vh;
+  background-image: url("../img/About us-01.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.aboutus .info {
+  padding: 2rem;
+}
+
+.aboutus .info h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #b03784;
+  text-transform: uppercase;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.aboutus .info p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #434142;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .aboutus .info {
+    padding: 4rem;
+  }
+  .aboutus .info h1 {
+    font-size: 49px;
+  }
+  .aboutus .info p {
+    font-size: 25px;
+    line-height: 37px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .aboutus .info {
+    padding: 12rem;
+  }
+  .aboutus .info h1 {
+    font-size: 92px;
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(206, 160, 197, 0.9);
+  z-index: 1000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  display: none;
+  -webkit-transition: ease-in-out .25s;
+  transition: ease-in-out .25s;
+}
+
+.lightbox #exit {
+  position: absolute;
+  right: 4rem;
+  top: 4rem;
+  color: #f5f4f6;
+  font-size: 4rem;
+  opacity: .25s;
+  cursor: pointer;
+  padding: 1.5rem;
+  -webkit-transition: ease-in-out .35;
+  transition: ease-in-out .35;
+}
+
+.lightbox #exit:hover {
+  opacity: 1;
+}
+
+.lightbox .img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0;
+  -webkit-transition: ease-in-out .25s;
+  transition: ease-in-out .25s;
+}
+
+.lightbox .img img {
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  -webkit-box-shadow: 0.5rem 0.5rem 2rem rgba(206, 160, 197, 0.85);
+          box-shadow: 0.5rem 0.5rem 2rem rgba(206, 160, 197, 0.85);
+  max-height: 800px;
+  max-width: 800px;
+}
+
+.lightbox .img span {
+  color: #f5f4f6;
+}
+
+.galeria {
+  padding: 1rem 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#b03784), to(#7b89c6));
+  background: linear-gradient(to bottom, #b03784, #7b89c6);
+}
+
+.galeria .caja {
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.galeria .caja .img {
+  border-radius: 5%;
+  background-color: #f5f4f6;
+  overflow: hidden;
+  width: 290px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: .8rem;
+  position: relative;
+  cursor: pointer;
+}
+
+.galeria .caja .img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #cea0c5;
+  opacity: 0;
+  -webkit-transition: ease-in-out .25s;
+  transition: ease-in-out .25s;
+}
+
+.galeria .caja .img:hover::after {
+  opacity: .6;
+}
+
+.galeria .caja .img:hover img {
+  -webkit-transform: scale(1100px);
+          transform: scale(1100px);
+}
+
+.galeria .caja .img img {
+  border-radius: 10%;
+  padding: 1rem;
+  width: 100%;
+  -webkit-transition: ease-in-out .25s;
+  transition: ease-in-out .25s;
+}
+
+@media screen and (min-width: 768px) {
+  .galeria .caja .img {
+    width: 250px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .galeria .caja .img {
+    width: 380px;
+    height: 300px;
+  }
+}
+
+.footer {
+  background-color: #7b89c6;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer .contacto .caja1 h5 {
+  padding-top: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #f5f4f6;
+  text-align: left;
+}
+
+.footer .contacto .caja1 p {
+  padding-top: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #f5f4f6;
+  line-height: 25px;
+  text-align: left;
+}
+
+.footer .contacto .caja2 h5 {
+  padding-top: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #f5f4f6;
+  text-align: left;
+}
+
+.footer .contacto .caja2 .icono {
+  padding-top: 1rem;
+  padding-right: .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+@media screen and (min-width: 768px) {
+  .footer .contacto {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 8rem;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .footer .contacto {
+    grid-gap: 25rem;
   }
 }
 /*# sourceMappingURL=estilo.css.map */
